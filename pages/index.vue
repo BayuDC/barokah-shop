@@ -5,6 +5,7 @@
     <div class="container max-w-screen-xl mx-auto py-10">
       <Banner />
       <Category />
+      <Product />
     </div>
   </div>
 </template>
