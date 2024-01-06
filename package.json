@@ -11,6 +11,8 @@
     "format": "prettier -w ."
   },
   "devDependencies": {
+    "@nuxtjs/google-fonts": "latest",
+    "@nuxtjs/tailwindcss": "latest",
     "nuxt": "^3.9.0",
     "prettier": "^3.1.1",
     "vue": "^3.4.5",
