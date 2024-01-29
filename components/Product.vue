@@ -1,6 +1,11 @@
 <script lang="ts" setup>
+const categoryId = useQuery<string>('category');
+
 const { data } = await useMyFetch<{ products: Product[] }>('/products', {
   default: () => ({ products: [] }),
+  query: {
+    category_id: categoryId,
+  },
 });
 </script>
 

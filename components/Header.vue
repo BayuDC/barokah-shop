@@ -16,7 +16,7 @@
           </button>
         </div>
         <div class="mr-4 lg:mr-6 hover:text-primary transition relative">
-          <NuxtLink href="/cart">
+          <NuxtLink href="#">
             <i class="bx bx-cart bx-md block"></i>
           </NuxtLink>
         </div>

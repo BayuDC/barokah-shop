@@ -17,5 +17,8 @@
     "prettier": "^3.1.1",
     "vue": "^3.4.5",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@vueuse/nuxt": "^10.7.2"
   }
 }
