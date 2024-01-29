@@ -5,10 +5,15 @@
     <div class="bg-secondary rounded-xl overflow-hidden">
       <img class="block w-full aspect-square" src="/img/paha-ayam.png" alt="" />
     </div>
-    <div class="p-5 flex flex-col">
-      <h2 class="font-medium text-xl">Paha Ayam</h2>
-      <p class="font-bold text-2xl mt-1">Rp39.000<span class="text-lg font-medium text-white/60">/kg</span></p>
-      <Button class="mt-5">Tambah ke Keranjang</Button>
+    <div class="md:p-5 p-2.5 flex flex-col">
+      <h2 class="font-medium text-sm md:text-xl">Paha Ayam</h2>
+      <p class="font-bold text-lg md:text-2xl md:mt-1">
+        Rp39.000<span class="text-sm md:text-lg font-medium text-white/60">/kg</span>
+      </p>
+      <Button class="mt-2.5 md:mt-5">
+        <div class="md:block hidden">Tambah ke Keranjang</div>
+        <div class="md:hidden flex items-center justify-center"><i class="bx bx-plus bx-xs block"></i>Keranjang</div>
+      </Button>
     </div>
   </div>
 </template>

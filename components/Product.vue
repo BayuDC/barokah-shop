@@ -1,15 +1,9 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-    <ProductItem />
-    <ProductItem />
-    <ProductItem />
-    <ProductItem />
-    <ProductItem />
-    <ProductItem />
-    <ProductItem />
-    <ProductItem />
+  <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 md:gap-5 gap-2">
+    <ProductItem :key="'p' + 1" />
+    <ProductItem :key="'p' + 2" />
   </div>
 </template>
 
