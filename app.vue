@@ -11,3 +11,14 @@
     </Body>
   </Html>
 </template>
+
+<style>
+.blur-enter-active,
+.blur-leave-active {
+  @apply transition duration-200;
+}
+.blur-enter-from,
+.blur-leave-to {
+  @apply opacity-0 blur;
+}
+</style>

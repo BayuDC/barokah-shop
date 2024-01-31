@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+silentLogin();
+</script>
 
 <template>
   <div class="px-3 md:px-5 lg:px-10">
