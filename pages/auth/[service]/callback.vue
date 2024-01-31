@@ -24,7 +24,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1 class="py-10 px-4 text-center text-2xl font-bold text-primary">Tunggu sebentar ya...</h1>
+  <h1 class="py-10 px-4 text-center text-2xl font-bold text-primary">Tunggu sebentar ya!</h1>
 </template>
 
 <style scoped></style>
