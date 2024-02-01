@@ -15,7 +15,7 @@ const user = useAuth();
         <Transition name="blur" mode="out-in">
           <div v-if="user" class="flex items-center">
             <div class="mr-4 lg:mr-6 hover:text-primary transition relative">
-              <NuxtLink href="#">
+              <NuxtLink href="/cart">
                 <i class="bx bx-cart bx-md block"></i>
               </NuxtLink>
             </div>
