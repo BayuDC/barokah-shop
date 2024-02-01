@@ -26,7 +26,7 @@ const user = useAuth();
               <img :src="user.picture_url" />
             </div>
           </div>
-          <Button v-else to="/login">Masuk</Button>
+          <Button v-else to="/login">Login</Button>
         </Transition>
       </div>
     </div>

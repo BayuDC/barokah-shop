@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useToast } from 'vue-toast-notification';
 const config = useRuntimeConfig();
+const user = useAuth();
 
 const props = defineProps<{
   id: number;
@@ -13,6 +14,12 @@ const props = defineProps<{
 const toast = useToast();
 
 async function addToCart() {
+  if (!user.value) {
+    return toast.error('Mohon login terlebih dahulu!', {
+      position: 'bottom',
+    });
+  }
+
   await useMyFetch('/cart/products', {
     method: 'patch',
     body: {
