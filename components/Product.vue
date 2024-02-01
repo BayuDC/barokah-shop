@@ -14,6 +14,7 @@ const { data } = await useMyFetch<{ products: Product[] }>('/products', {
     <ProductItem
       v-for="p in data.products"
       v-bind="{
+        id: p.id,
         name: p.name,
         unit: p.unit,
         price: p.price,

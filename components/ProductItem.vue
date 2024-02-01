@@ -1,12 +1,30 @@
 <script lang="ts" setup>
+import { useToast } from 'vue-toast-notification';
 const config = useRuntimeConfig();
 
-defineProps<{
+const props = defineProps<{
+  id: number;
   name: string;
   unit: string;
   price: number;
   pictureUrl: string;
 }>();
+
+const toast = useToast();
+
+async function addToCart() {
+  await useMyFetch('/cart/products', {
+    method: 'patch',
+    body: {
+      product_id: props.id,
+      quantity: 1,
+    },
+  });
+
+  toast.success('Berhasil ditambahkan ke keranjang!', {
+    position: 'bottom',
+  });
+}
 </script>
 
 <template>
@@ -19,7 +37,7 @@ defineProps<{
       <p class="font-bold text-lg md:text-2xl md:mt-1">
         Rp{{ price.toLocaleString('id') }}<span class="text-xs md:text-lg font-medium text-white/60">/{{ unit }}</span>
       </p>
-      <Button class="mt-2.5 md:mt-5"> Tambah ke Keranjang </Button>
+      <Button @click="addToCart" class="mt-2.5 md:mt-5"> Tambah ke Keranjang </Button>
     </div>
   </div>
 </template>
