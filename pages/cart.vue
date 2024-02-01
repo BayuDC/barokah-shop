@@ -19,6 +19,7 @@ const { data } = await useMyFetch<{
           :stock="p.stock"
           :unit="p.unit"
           :price="p.price"
+          :quantity="p.pivot.quantity"
           :picture-url="p['picture_url']"
         />
       </ul>

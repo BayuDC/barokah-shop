@@ -12,6 +12,9 @@ declare global {
     stock: number;
     category: Category;
     picture_url: string;
+    pivot: {
+      quantity: number;
+    };
   }
 }
 
