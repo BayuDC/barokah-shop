@@ -8,8 +8,10 @@ const props = defineProps<{
   quantity: number;
   pictureUrl: string;
 }>();
-
-const count = ref(props.quantity);
+const emit = defineEmits<{
+  plus: [];
+  minus: [];
+}>();
 </script>
 
 <template>
@@ -31,13 +33,15 @@ const count = ref(props.quantity);
           <div class="text-sm my-2 md:text-center">Stok Tersedia: {{ stock }}</div>
           <div class="py-2 px-4 bg-primary/20 w-fit flex gap-6 rounded-full items-center">
             <button
-              @click="count--"
+              @click="emit('minus')"
               class="icon-[mdi--minus-thick] text-2xl leading-none hover:text-primary transition"
             ></button>
-            <span class="font-bold text-lg text-white/80">{{ count }}</span>
+            <span class="font-bold text-lg text-white/80">{{ quantity }}</span>
             <button
-              @click="count++"
-              class="icon-[mdi--plus-thick] text-2xl leading-none hover:text-primary transition"
+              @click="emit('plus')"
+              class="icon-[mdi--plus-thick] text-2xl leading-none transition"
+              :class="[quantity < stock ? 'hover:text-primary' : 'cursor-not-allowed text-white/40']"
+              :disabled="quantity >= stock"
             ></button>
           </div>
         </div>
