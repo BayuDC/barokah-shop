@@ -5,7 +5,10 @@ silentLogin();
 <template>
   <Container>
     <Banner />
-    <Category />
+    <div class="py-10">
+      <Search class="lg:hidden flex mb-6" />
+      <Category />
+    </div>
     <Product />
   </Container>
 </template>

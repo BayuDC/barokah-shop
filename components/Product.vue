@@ -1,10 +1,12 @@
 <script lang="ts" setup>
 const categoryId = useQuery<string>('category');
+const searchKeyword = useQuery<string>('search');
 
 const { data } = await useMyFetch<{ products: Product[] }>('/products', {
   default: () => ({ products: [] }),
   query: {
     category_id: categoryId,
+    search: searchKeyword,
   },
 });
 </script>

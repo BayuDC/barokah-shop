@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const route = useRoute();
 const props = defineProps<{
   active?: boolean;
   slug?: string;
@@ -13,7 +14,7 @@ const emit = defineEmits<{
     class="text-xl"
     :class="[active ? 'font-bold text-primary' : 'font-medium text-primary/60 hover:text-primary/100 transition']"
   >
-    <NuxtLink @click="emit('click')" :to="{ query: { category: slug } }"><slot /></NuxtLink>
+    <NuxtLink @click="emit('click')" :to="{ query: { ...route.query, category: slug } }"><slot /></NuxtLink>
   </li>
 </template>
 

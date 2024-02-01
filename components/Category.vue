@@ -27,7 +27,7 @@ function reset() {
 </script>
 
 <template>
-  <div class="py-10">
+  <div>
     <div class="flex items-center justify-between lg:hidden" @click="open = !open">
       <div class="text-xl font-bold text-primary">
         {{ selected?.name || 'Semua' }}
