@@ -14,9 +14,12 @@ const user = useAuth();
       <div class="ml-auto">
         <Transition name="blur" mode="out-in">
           <div v-if="user" class="flex items-center">
-            <div class="mr-4 lg:mr-6 hover:text-primary transition relative">
-              <NuxtLink href="/cart">
-                <i class="bx bx-cart bx-md block"></i>
+            <div class="flex md:gap-2 gap-1 md:mr-4 mr-3 items-center">
+              <NuxtLink to="#" class="text-3xl leading-none hover:text-primary transition p-1">
+                <span class="block icon-[mdi--heart-outline]"></span>
+              </NuxtLink>
+              <NuxtLink to="/cart" class="text-3xl leading-none hover:text-primary transition p-1">
+                <span class="block icon-[mdi--cart-outline]"></span>
               </NuxtLink>
             </div>
             <div class="h-12 w-12 aspect-square overflow-hidden rounded-full">

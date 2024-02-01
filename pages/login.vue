@@ -22,11 +22,11 @@ function goToLogin(service: string) {
           class="!bg-[#F2F2F2] !text-[#1F1F1F] flex items-center justify-between gap-2"
         >
           <span>Masuk dengan Google</span>
-          <i class="bx bxl-google bx-sm"></i>
+          <img src="~/assets/google.svg" alt="" />
         </Button>
         <Button @click="goToLogin('discord')" class="!bg-[#5865F2] text-white flex items-center justify-between gap-2">
           <span>Masuk dengan Discord</span>
-          <i class="bx bxl-discord-alt bx-sm"></i>
+          <img src="~/assets/discord.svg" alt="" />
         </Button>
       </div>
     </div>

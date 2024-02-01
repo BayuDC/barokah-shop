@@ -17,12 +17,9 @@ defineProps<{
     <div class="md:p-5 p-2.5 flex flex-col">
       <h2 class="font-medium text-sm md:text-xl">{{ name }}</h2>
       <p class="font-bold text-lg md:text-2xl md:mt-1">
-        Rp{{ price.toLocaleString('id') }}<span class="text-sm md:text-lg font-medium text-white/60">/{{ unit }}</span>
+        Rp{{ price.toLocaleString('id') }}<span class="text-xs md:text-lg font-medium text-white/60">/{{ unit }}</span>
       </p>
-      <Button class="mt-2.5 md:mt-5">
-        <div class="md:block hidden">Tambah ke Keranjang</div>
-        <div class="md:hidden flex items-center justify-center"><i class="bx bx-plus bx-xs block"></i>Keranjang</div>
-      </Button>
+      <Button class="mt-2.5 md:mt-5"> Tambah ke Keranjang </Button>
     </div>
   </div>
 </template>

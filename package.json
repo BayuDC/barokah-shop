@@ -11,14 +11,16 @@
     "format": "prettier -w ."
   },
   "devDependencies": {
+    "@iconify-json/mdi": "^1.1.64",
+    "@iconify/tailwind": "^0.1.4",
     "@nuxtjs/google-fonts": "latest",
     "@nuxtjs/tailwindcss": "latest",
+    "@vueuse/nuxt": "^10.7.2",
     "nuxt": "^3.9.0",
     "prettier": "^3.1.1",
     "vue": "^3.4.5",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@vueuse/nuxt": "^10.7.2"
   }
 }

@@ -32,9 +32,8 @@ function reset() {
       <div class="text-xl font-bold text-primary">
         {{ selected?.name || 'Semua' }}
       </div>
-      <div class="text-primary">
-        <i class="bx bx-chevron-down bx-md block"></i>
-      </div>
+      <div v-if="!open" class="text-primary text-3xl leading-none icon-[mdi--keyboard-arrow-down]"></div>
+      <div v-else class="text-primary text-3xl leading-none icon-[mdi--keyboard-arrow-up]"></div>
     </div>
     <ul class="flex-col lg:flex lg:flex-row lg:gap-10 gap-2 py-2 justify-center" :class="[open ? 'flex' : 'hidden']">
       <CategoryItem :active="!selected" @click="reset">Semua</CategoryItem>
