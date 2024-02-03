@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useToast } from 'vue-toast-notification';
+const nuxtApp = useNuxtApp();
 const config = useRuntimeConfig();
 const user = useAuth();
 
@@ -11,13 +11,9 @@ const props = defineProps<{
   pictureUrl: string;
 }>();
 
-const toast = useToast();
-
 async function addToCart() {
   if (!user.value) {
-    return toast.error('Mohon login terlebih dahulu!', {
-      position: 'bottom',
-    });
+    nuxtApp.$toast.error('Mohon login terlebih dahulu!');
   }
 
   await useMyFetch('/cart/products', {
@@ -28,9 +24,7 @@ async function addToCart() {
     },
   });
 
-  toast.success('Berhasil ditambahkan ke keranjang!', {
-    position: 'bottom',
-  });
+  nuxtApp.$toast.success('Berhasil ditambahkan ke keranjang!');
 }
 </script>
 

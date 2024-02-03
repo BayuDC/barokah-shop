@@ -1,0 +1,7 @@
+.Toastify__toast-container {
+  @apply w-full max-w-lg;
+}
+
+.Toastify__toast-theme--dark {
+  @apply bg-black text-white font-sans border-2 border-primary;
+}

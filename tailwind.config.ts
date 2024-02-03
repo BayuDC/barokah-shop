@@ -6,8 +6,8 @@ export default {
   theme: {
     colors: {
       white: '#f0ece5',
-      black: '#191919',
-      primary: '#ff8fbc',
+      black: '#111111',
+      primary: '#FF9BD2',
       secondary: '#f9f9e1',
       accent: '#89ccd7',
     },

@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  css: ['vue3-toastify/dist/index.css', '~/assets/custom.css'],
   routeRules: {
     '/profile': { ssr: false },
     '/cart': { ssr: false },
