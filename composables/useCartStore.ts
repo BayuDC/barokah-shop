@@ -24,7 +24,12 @@ export const useCartStore = defineStore('carts', () => {
 
     await fetchProduct();
   }
-  async function checkout(payment: string) {
+  async function checkout(payment: string, address: string) {
+    await useMyFetch('/profile', {
+      method: 'put',
+      body: { address },
+    });
+
     const { error } = await useMyFetch('/transactions/checkout', {
       method: 'post',
       body: { payment },

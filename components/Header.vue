@@ -15,11 +15,11 @@ const user = useAuth();
         <Transition name="blur" mode="out-in">
           <div v-if="user" class="flex items-center">
             <div class="flex md:gap-2 gap-1 md:mr-4 mr-3 items-center">
-              <NuxtLink to="#" class="text-3xl leading-none hover:text-primary transition p-1">
-                <span class="block icon-[mdi--heart-outline]"></span>
-              </NuxtLink>
               <NuxtLink to="/cart" class="text-3xl leading-none hover:text-primary transition p-1">
                 <span class="block icon-[mdi--cart-outline]"></span>
+              </NuxtLink>
+              <NuxtLink to="/transactions" class="text-3xl leading-none hover:text-primary transition p-1">
+                <span class="block icon-[mdi--invoice-text-outline]"></span>
               </NuxtLink>
             </div>
             <div class="h-12 w-12 aspect-square overflow-hidden rounded-full">

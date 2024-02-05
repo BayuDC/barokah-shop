@@ -1,19 +1,23 @@
 <script lang="ts" setup>
 const nuxtApp = useNuxtApp();
 const cart = useCartStore();
+const user = useAuth();
 
 const payment = ref('');
-const address = ref('');
+const address = ref(user.value?.address);
 
 async function submit() {
   if (!payment.value) return nuxtApp.$toast.error('Mohon pilih metode pembayaran!');
   if (!address.value) return nuxtApp.$toast.error('Mohon isi alamat pengiriman!');
 
-  if (!(await cart.checkout(payment.value))) {
+  if (!(await cart.checkout(payment.value, address.value))) {
     return nuxtApp.$toast.error('Transaksi gagal, silakan coba lagi!');
   }
 
   nuxtApp.$toast.success('Transaksi berhasil, pesananmu sedang diproses!');
+  setInterval(() => {
+    navigateTo('/transactions');
+  }, 2000);
 }
 </script>
 
