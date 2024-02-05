@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     '/cart': { ssr: false },
   },
   devtools: { enabled: false },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@vueuse/nuxt'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@vueuse/nuxt', '@pinia/nuxt'],
   googleFonts: {
     families: {
       Poppins: [400, 500, 600, 700],

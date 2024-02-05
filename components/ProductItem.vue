@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 const nuxtApp = useNuxtApp();
 const config = useRuntimeConfig();
+const cart = useCartStore();
 const user = useAuth();
 
 const props = defineProps<{
@@ -16,13 +17,7 @@ async function addToCart() {
     nuxtApp.$toast.error('Mohon login terlebih dahulu!');
   }
 
-  await useMyFetch('/cart/products', {
-    method: 'patch',
-    body: {
-      product_id: props.id,
-      quantity: 1,
-    },
-  });
+  await cart.addOrRemoveProduct(props.id, 1);
 
   nuxtApp.$toast.success('Berhasil ditambahkan ke keranjang!');
 }

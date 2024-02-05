@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 const nuxtApp = useNuxtApp();
+const cart = useCartStore();
 
 const payment = ref('');
 const address = ref('');
@@ -8,26 +9,19 @@ async function submit() {
   if (!payment.value) return nuxtApp.$toast.error('Mohon pilih metode pembayaran!');
   if (!address.value) return nuxtApp.$toast.error('Mohon isi alamat pengiriman!');
 
-  const { error } = await useMyFetch('/transactions/checkout', {
-    method: 'post',
-    body: {
-      payment: payment.value,
-    },
-  });
-
-  if (error.value) {
+  if (!(await cart.checkout(payment.value))) {
     return nuxtApp.$toast.error('Transaksi gagal, silakan coba lagi!');
   }
 
-  nuxtApp.$toast.success('Pesananmu akan segera kami proses!');
+  nuxtApp.$toast.success('Transaksi berhasil, pesananmu sedang diproses!');
 }
 </script>
 
 <template>
-  <form @submit.prevent="submit" class="p-5 h-fit bg-primary/20 rounded-xl flex flex-col">
+  <form @submit.prevent="submit" class="p-5 h-fit bg-primary/20 rounded-xl flex flex-col" v-if="!cart.isEmpty">
     <div class="mb-3">
       <label for="" class="uppercase text-sm block mb-1 font-bold text-white/60">Total Harga</label>
-      <div class="text-3xl font-bold">Rp24.500</div>
+      <div class="text-3xl font-bold">Rp{{ cart.price.toLocaleString('id') }}</div>
     </div>
     <div class="mb-3">
       <label for="" class="uppercase text-sm block mb-1 font-bold text-white/60">Metode Pembayaran</label>
