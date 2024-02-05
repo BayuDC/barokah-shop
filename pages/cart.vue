@@ -7,8 +7,9 @@ definePageMeta({
 <template>
   <Container>
     <h1 class="text-4xl md:text-5xl font-medium mb-10">Keranjang</h1>
-    <div>
-      <Cart />
+    <div class="grid md:grid-cols-3 gap-10">
+      <Cart class="md:col-span-2" />
+      <CartDetail />
     </div>
   </Container>
 </template>

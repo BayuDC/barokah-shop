@@ -18,7 +18,7 @@ function clear() {
 <template>
   <form @submit.prevent="submit" class="text-black relative w-full">
     <input
-      class="py-2 pl-3 pr-10 w-full bg-white font-medium outline-primary rounded-md border-none group"
+      class="py-2 pl-3 pr-10 w-full bg-white font-medium outline-primary rounded-md border-none"
       placeholder="Ketik untuk mencari"
       v-model.lazy="search"
     />

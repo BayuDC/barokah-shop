@@ -17,7 +17,8 @@ async function update(product_id: number, quantity: number) {
 </script>
 
 <template>
-  <ul v-if="data?.products">
+  <div v-if="!data?.products.length" class="text-2xl">Keranjangmu masih kosong</div>
+  <ul v-else>
     <CartItem
       v-for="p in data.products"
       :name="p.name"
