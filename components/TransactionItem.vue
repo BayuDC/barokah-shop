@@ -1,10 +1,30 @@
 <script lang="ts" setup>
-defineProps<{
+const props = defineProps<{
+  id: number;
   status: 'created' | 'confirmed' | 'finished' | 'canceled';
   price: number;
   createdAt: string;
   products: Product[];
 }>();
+
+const nuxtApp = useNuxtApp();
+
+async function cancel() {
+  await useMyFetch(`/transactions/${props.id}/cancel`, {
+    method: 'patch',
+  });
+
+  nuxtApp.$toast.success('Pesanan telah dibatalkan');
+  refreshNuxtData('transactions');
+}
+async function finish() {
+  await useMyFetch(`/transactions/${props.id}/finish`, {
+    method: 'patch',
+  });
+
+  nuxtApp.$toast.success('Terimakasih telah belanja disini');
+  refreshNuxtData('transactions');
+}
 </script>
 
 <template>
@@ -31,8 +51,8 @@ defineProps<{
       </div>
     </div>
     <div class="flex gap-2 flex-col md:mt-auto">
-      <Button>Pesanan Diterima</Button>
-      <Button>Batalkan Pesanan</Button>
+      <Button @click="finish" v-if="status == 'confirmed'">Pesanan Diterima</Button>
+      <Button @click="cancel" v-if="status == 'created' || status == 'confirmed'">Batalkan Pesanan</Button>
     </div>
   </li>
 </template>

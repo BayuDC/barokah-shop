@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 const { data } = await useMyFetch<{ transactions: Transaction[] }>('/transactions', {
   default: () => ({ transactions: [] }),
+  key: 'transactions',
 });
 </script>
 
@@ -9,6 +10,7 @@ const { data } = await useMyFetch<{ transactions: Transaction[] }>('/transaction
   <ul class="">
     <TransactionItem
       v-for="t in data.transactions"
+      :id="t.id"
       :key="t.id"
       :price="t['final_price']"
       :created-at="t['created_at']"
