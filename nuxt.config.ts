@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   routeRules: {
     '/profile': { ssr: false },
     '/cart': { ssr: false },
+    '/transactions': { ssr: false },
   },
   devtools: { enabled: false },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@vueuse/nuxt', '@pinia/nuxt'],

@@ -16,6 +16,13 @@ declare global {
       quantity: number;
     };
   }
+  interface Transaction {
+    id: number;
+    created_at: string;
+    final_price: number;
+    status: 'created' | 'confirmed' | 'finished' | 'canceled';
+    products: Product[];
+  }
 }
 
 export {};
