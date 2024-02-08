@@ -2,6 +2,10 @@
 definePageMeta({
   middleware: ['auth'],
 });
+
+useHead({
+  title: 'Transaksi - Toko Barokah',
+});
 </script>
 
 <template>

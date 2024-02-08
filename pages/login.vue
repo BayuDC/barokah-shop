@@ -3,6 +3,10 @@ definePageMeta({
   layout: 'empty',
 });
 
+useHead({
+  title: 'Login - Toko Barokah',
+});
+
 const config = useRuntimeConfig();
 
 function goToLogin(service: string) {
