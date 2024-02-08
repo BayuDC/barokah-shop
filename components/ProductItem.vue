@@ -31,9 +31,7 @@ onMounted(() => {
 
 <template>
   <div class="bg-primary/20 rounded-xl" ref="self">
-    <div class="bg-secondary rounded-xl overflow-hidden">
-      <img class="block w-full aspect-square" :src="config.public.baseUrl + pictureUrl" alt="" />
-    </div>
+    <ProductImg :url="config.public.baseUrl + pictureUrl" />
     <div class="md:p-5 p-2.5 flex flex-col">
       <h2 class="font-medium text-sm md:text-xl">{{ name }}</h2>
       <p class="font-bold text-lg md:text-2xl md:mt-1">
