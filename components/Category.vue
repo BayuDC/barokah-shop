@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 const route = useRoute();
+const { scrollToProduct } = useScrollTo();
 
 const { data } = await useMyFetch<{
   categories: Category[];
@@ -11,6 +12,7 @@ const { data } = await useMyFetch<{
 
 const open = ref(false);
 const selected = ref<Category | undefined>();
+const self = ref<HTMLDivElement | null>(null);
 
 selected.value = data.value.categories.find((c) => {
   return c.id.toString() == route.query.category;
@@ -19,15 +21,17 @@ selected.value = data.value.categories.find((c) => {
 function select(category: Category) {
   selected.value = category;
   open.value = false;
+  scrollToProduct();
 }
 function reset() {
   selected.value = undefined;
   open.value = false;
+  scrollToProduct();
 }
 </script>
 
 <template>
-  <div>
+  <div ref="self">
     <div class="flex items-center justify-between lg:hidden" @click="open = !open">
       <div class="text-xl font-bold text-primary">
         {{ selected?.name || 'Semua' }}

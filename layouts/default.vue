@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <Header />
+    <Header class="sticky top-0 z-40" />
     <slot />
   </div>
 </template>

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 const route = useRoute();
 const search = ref('');
+const { scrollToProduct } = useScrollTo();
 
 async function submit() {
   await navigateTo({
@@ -9,9 +10,7 @@ async function submit() {
       search: search.value || undefined,
     },
   });
-}
-function clear() {
-  search.value = '';
+  scrollToProduct();
 }
 </script>
 

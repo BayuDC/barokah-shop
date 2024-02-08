@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div>
+  <div id="banner">
     <div
       class="rounded-xl overflow-hidden bg-center bg-cover lg:h-96 h-48"
       style="background-image: url('/img/banner.webp')"
