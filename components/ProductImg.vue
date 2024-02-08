@@ -26,7 +26,11 @@ const self = error
     <div v-if="!ready" class="aspect-square flex items-center justify-center">
       <span class="icon-[mdi--loading] text-6xl animate-spin block text-black"> </span>
     </div>
-    <img class="block w-full aspect-square transition" :class="[ready ? 'opacity-100' : 'opacity-0 blur']" ref="self" />
+    <img
+      class="block w-full aspect-square group-hover:scale-105 transition"
+      :class="[ready ? 'opacity-100' : 'opacity-0 blur']"
+      ref="self"
+    />
   </div>
 </template>
 

@@ -30,7 +30,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="bg-primary/20 rounded-xl" ref="self">
+  <div class="bg-primary/20 rounded-xl group" ref="self">
     <ProductImg :url="config.public.baseUrl + pictureUrl" />
     <div class="md:p-5 p-2.5 flex flex-col">
       <h2 class="font-medium text-sm md:text-xl">{{ name }}</h2>
