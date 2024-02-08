@@ -5,19 +5,9 @@
     </Head>
     <Body class="bg-black text-white">
       <NuxtLayout>
+        <NuxtLoadingIndicator :height="2" :color="false" class="bg-primary" />
         <NuxtPage />
       </NuxtLayout>
     </Body>
   </Html>
 </template>
-
-<style>
-.blur-enter-active,
-.blur-leave-active {
-  @apply transition duration-200;
-}
-.blur-enter-from,
-.blur-leave-to {
-  @apply opacity-0 blur;
-}
-</style>

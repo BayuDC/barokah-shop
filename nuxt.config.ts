@@ -19,4 +19,8 @@ export default defineNuxtConfig({
       baseUrl: process.env.BASE_URL,
     },
   },
+  app: {
+    pageTransition: { name: 'blur', mode: 'out-in' },
+    layoutTransition: { name: 'blur', mode: 'out-in' },
+  },
 });

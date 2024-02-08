@@ -24,7 +24,9 @@ async function addToCart() {
 
 const self = ref<HTMLDivElement | null>(null);
 
-usePopMotion(self, { opacity: 0, scale: 0 }, { opacity: 100, scale: 1, transition: { delay: Math.random() * 300 } });
+onMounted(() => {
+  usePopMotion(self, { opacity: 0, scale: 0 }, { opacity: 100, scale: 1, transition: { delay: Math.random() * 300 } });
+});
 </script>
 
 <template>

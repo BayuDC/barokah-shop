@@ -5,3 +5,19 @@
 .Toastify__toast-theme--dark {
   @apply bg-black text-white font-sans border-2 border-primary;
 }
+
+.blur-enter-active,
+.blur-leave-active {
+  @apply transition duration-300;
+}
+.blur-enter-from,
+.blur-leave-to {
+  @apply opacity-0 blur;
+}
+.slide-enter-active,
+.slide-leave-active {
+  @apply transition duration-300;
+}
+.slide-leave-to {
+  @apply opacity-0 translate-y-20;
+}
