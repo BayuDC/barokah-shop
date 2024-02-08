@@ -21,10 +21,14 @@ async function addToCart() {
 
   nuxtApp.$toast.success('Berhasil ditambahkan ke keranjang!');
 }
+
+const self = ref<HTMLDivElement | null>(null);
+
+usePopMotion(self, { opacity: 0, scale: 0 }, { opacity: 100, scale: 1, transition: { delay: Math.random() * 300 } });
 </script>
 
 <template>
-  <div class="bg-primary/20 rounded-xl">
+  <div class="bg-primary/20 rounded-xl" ref="self">
     <div class="bg-secondary rounded-xl overflow-hidden">
       <img class="block w-full aspect-square" :src="config.public.baseUrl + pictureUrl" alt="" />
     </div>

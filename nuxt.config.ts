@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     '/transactions': { ssr: false },
   },
   devtools: { enabled: false },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@vueuse/nuxt', '@pinia/nuxt'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@vueuse/nuxt', '@vueuse/motion/nuxt', '@pinia/nuxt'],
   googleFonts: {
     families: {
       Poppins: [400, 500, 600, 700],

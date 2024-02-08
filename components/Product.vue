@@ -25,7 +25,7 @@ const { data } = await useMyFetch<{ products: Product[] }>('/products', {
         price: p.price,
         pictureUrl: p['picture_url'],
       }"
-      :key="p.id"
+      :key="`${p.id}`"
     />
   </div>
 </template>
