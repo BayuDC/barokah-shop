@@ -1,6 +1,10 @@
 # Barokah Shop
 
-Barokah Shop (or Toko Barokah) is a simple e-commerce site where users can buy their kitchen necessities, such as meat, fish, vegetables and others. The admin dashboard for this website is https://github.com/BayuDC/barokah-admin
+Barokah Shop (or Toko Barokah) is a simple e-commerce site where users can buy their kitchen necessities, such as meat, fish, vegetables and others. Demo: https://barokah.bayudc.fun
+
+### ⚡️ Related
+
+- The admin dashboard: https://github.com/BayuDC/barokah-admin
 
 ## 🎨 Tech Stacks
 
