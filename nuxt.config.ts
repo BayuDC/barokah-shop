@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     '/profile': { ssr: false },
     '/cart': { ssr: false },
     '/transactions': { ssr: false },
+    '/admin': { redirect: process.env.BASE_URL + '/admin' },
   },
   devtools: { enabled: false },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@vueuse/nuxt', '@vueuse/motion/nuxt', '@pinia/nuxt'],

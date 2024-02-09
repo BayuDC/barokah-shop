@@ -15,7 +15,7 @@ async function submit() {
   }
 
   nuxtApp.$toast.success('Transaksi berhasil, pesananmu sedang diproses!');
-  setInterval(() => {
+  setTimeout(() => {
     navigateTo('/transactions');
   }, 2000);
 }
